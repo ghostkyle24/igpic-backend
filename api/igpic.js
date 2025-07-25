@@ -7,7 +7,10 @@ export default async function handler(req, res) {
       headers: { 'User-Agent': 'Mozilla/5.0' }
     });
     const html = await igRes.text();
-    const match = html.match(/"profile_pic_url_hd":"([^"]+)"/) || html.match(/"profile_pic_url":"([^"]+)"/);
+    // Tente encontrar a foto de perfil em diferentes formatos
+    let match = html.match(/"profile_pic_url_hd":"([^"]+)"/);
+    if (!match) match = html.match(/"profile_pic_url":"([^"]+)"/);
+    if (!match) match = html.match(/<img[^>]+profile-pic[^>]+src=\"([^\"]+)\"/);
     if (match && match[1]) {
       const url = match[1].replace(/\\u0026/g, "&").replace(/\\\//g, "/");
       return res.status(200).json({ url });
