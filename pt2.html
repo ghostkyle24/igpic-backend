@@ -265,23 +265,16 @@
             photo = qp.get('photo') || localStorage.getItem('userFoto');
       if(photo) document.getElementById('fotoperfil').src = decodeURIComponent(photo);
 
-      // Buscar foto do Instagram se houver @ salvo
+      // Buscar foto do Instagram via backend Vercel
       const igUser = localStorage.getItem('userInstagram');
       if (igUser) {
-        fetch(`https://www.instagram.com/${igUser}/?__a=1&__d=dis`, {
-          headers: { 'User-Agent': 'Mozilla/5.0' }
-        })
+        fetch(`https://igpic-backend.vercel.app/api/igpic?username=${igUser}`)
           .then(r => r.json())
           .then(data => {
-            let url = '';
-            if (data.graphql && data.graphql.user && data.graphql.user.profile_pic_url_hd) {
-              url = data.graphql.user.profile_pic_url_hd;
-            } else if (data.user && data.user.hd_profile_pic_url_info && data.user.hd_profile_pic_url_info.url) {
-              url = data.user.hd_profile_pic_url_info.url;
+            if (data.url) {
+              document.getElementById('fotoperfil').src = data.url;
             }
-            if (url) document.getElementById('fotoperfil').src = url;
-          })
-          .catch(()=>{});
+          });
       }
     })();
 
