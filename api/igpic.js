@@ -11,7 +11,7 @@ export default async function handler(req, res) {
       headers: { 'User-Agent': 'Mozilla/5.0' }
     });
     const html = await igRes.text();
-    // Tente encontrar a foto de perfil em diferentes formatos
+    console.log(html); // Log do HTML retornado para debug
     let match = html.match(/"profile_pic_url_hd":"([^"]+)"/);
     if (!match) match = html.match(/"profile_pic_url":"([^"]+)"/);
     if (!match) match = html.match(/<img[^>]+profile-pic[^>]+src=\"([^\"]+)\"/);
