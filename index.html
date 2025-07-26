@@ -191,13 +191,14 @@
 
     <div class="note"><strong>PLEASE NOTE:</strong><br>"WE PROTECT YOUR PRIVACY. EVERYTHING STAYS ANONYMOUS"</div>
 
-    <div style="display:flex;justify-content:center;align-items:center;margin:24px 0 0 0;">
+    <div style="display:flex;justify-content:center;align-items:center;margin:24px 0 0 0;position:relative;">
       <span style="background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);border-radius:50%;padding:8px;display:flex;align-items:center;justify-content:center;margin-right:10px;">
         <svg width="28" height="28" viewBox="0 0 448 512" fill="white" xmlns="http://www.w3.org/2000/svg">
-          <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9S287.7 141 224.1 141zm0 186c-39.5 0-71.5-32-71.5-71.5s32-71.5 71.5-71.5 71.5 32 71.5 71.5-32 71.5-71.5 71.5zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.3-9.9-66.7-36.2-92.9S388.6 1.7 353.3 0C317.8-1.7 130.2-1.7 94.7 0 59.4 1.7 28 9.9 1.7 36.2S1.7 123.4 0 158.7c-1.7 35.3-1.7 222.9 0 258.2 1.7 35.3 9.9 66.7 36.2 92.9s57.6 34.5 92.9 36.2c35.3 1.7 222.9 1.7 258.2 0 35.3-1.7 66.7-9.9 92.9-36.2s34.5-57.6 36.2-92.9c1.7-35.3 1.7-222.9 0-258.2zM398.8 388c-7.8 19.6-22.9 34.7-42.5 42.5-29.4 11.7-99.2 9-132.3 9s-102.9 2.6-132.3-9c-19.6-7.8-34.7-22.9-42.5-42.5-11.7-29.4-9-99.2-9-132.3s-2.6-102.9 9-132.3c7.8-19.6 22.9-34.7 42.5-42.5C121.1 54.6 190.9 57.2 224 57.2s102.9-2.6 132.3 9c19.6 7.8 34.7 22.9 42.5 42.5 11.7 29.4 9 99.2 9 132.3s2.7 102.9-9 132.3z"/>
+          <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9S287.7 141 224.1 141zm0 186c-39.5 0-71.5-32-71.5-71.5s32-71.5 71.5-71.5 71.5 32 71.5 71.5-32 71.5-71.5 71.5zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.3-9.9-66.7-36.2-92.9S388.6 1.7 353.3 0C317.8-1.7 130.2-1.7 94.7 0 59.4 1.7 28 9.9 1.7 36.2S1.7 123.4 0 158.7c-1.7 35.3-1.7 222.9 0 258.2 1.7 35.3 9.9 66.7 36.2 92.9s57.6 34.5 92.9 36.2c35.3 1.7 222.9 1.7 258.2 0 35.3-1.7 66.7-9.9 92.9-36.2s34.5-57.6 36.2-92.9c1.7-35.3 1.7-222.9 0-258.2z"/>
         </svg>
       </span>
-      <input type="text" id="instagram-input" name="instagram" placeholder="Enter your partner's Instagram @" style="width:85%;max-width:400px;padding:14px 16px;font-size:17px;border-radius:10px;border:1.5px solid #ee2a7b;box-sizing:border-box;text-align:left;outline:none;transition:border 0.2s;box-shadow:0 2px 8px rgba(238,42,123,0.08);background:#181818;color:#fff;font-family:'Poppins',sans-serif;">
+      <input type="text" id="instagram-input" name="instagram" autocomplete="off" placeholder="Enter your partner's Instagram @" style="width:85%;max-width:400px;padding:14px 16px;font-size:17px;border-radius:10px;border:1.5px solid #ee2a7b;box-sizing:border-box;text-align:left;outline:none;transition:border 0.2s;box-shadow:0 2px 8px rgba(238,42,123,0.08);background:#181818;color:#fff;font-family:'Poppins',sans-serif;">
+      <div id="instagram-suggestions" style="position:absolute;top:100%;left:48px;right:0;z-index:10;background:#222;border-radius:0 0 10px 10px;box-shadow:0 2px 8px rgba(0,0,0,0.15);"></div>
     </div>
 
     <div class="final-text">CHOOSE THE COUNTRY AND ENTER YOUR PARTNER'S NUMBER 👇</div>
