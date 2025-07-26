@@ -261,10 +261,6 @@
     })();
 
     (function(){
-      const qp = new URLSearchParams(location.search),
-            photo = qp.get('photo') || localStorage.getItem('userFoto');
-      if(photo) document.getElementById('fotoperfil').src = decodeURIComponent(photo);
-
       // Buscar foto do Instagram via backend Vercel
       const igUser = localStorage.getItem('userInstagram');
       if (igUser) {
